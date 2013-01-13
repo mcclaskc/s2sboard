@@ -9,8 +9,8 @@ development:
   database: s2sboard_development
   pool: 5
   username: root
-  password: root
-  socket: /Applications/MAMP/tmp/mysql/mysql.sock
+  password: 
+ # socket: /Applications/MAMP/tmp/mysql/mysql.sock Fletcher's socket
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -21,8 +21,8 @@ test:
   database: s2sboard_test
   pool: 5
   username: root
-  password: root
-  socket: /Applications/MAMP/tmp/mysql/mysql.sock
+  password: 
+ # socket: /Applications/MAMP/tmp/mysql/mysql.sock Fletcher's socket
   
 production:
   adapter: mysql2
