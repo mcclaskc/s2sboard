@@ -8,7 +8,7 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 </head>
 <body>
 <div class="navbar">
@@ -41,6 +41,7 @@
 	<div class="row">
 		<div class="span9"><%= yield %></div>
 	</div>	
+  <%= debug(params) if Rails.env.development? %>
 </div>
 
 
