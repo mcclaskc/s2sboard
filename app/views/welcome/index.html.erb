@@ -1,3 +1,22 @@
 <h1>Welcome to Startups2Students</h1>
 	<p>This site is currently under construction. Please visit <a href = "http://csuac.com/tagged/s2s">CSUAC.com</a> </p>	
-	<p><%=  @job.each { |x| puts x} %></p>
+	<table border = 1>
+    <% @jobs.each do |job| %>
+	  <tr>
+	  	<td>Job ID</td>
+	  	<td>Job Name</td>
+	  	<td>Job Type</td>
+	  </tr>   
+      <tr>
+        <td><%= link_to job.id, job_path(job) %></td>
+        <td><%= job.name %></td>
+        <td><%= job.type %></td>
+        <td><%= job.description %></td>
+        <td><%= job.user_id %></td>
+        <td><%= job.contact %></td>
+        <td><%=l job.created_at %></td>
+    
+       </tr>
+     </table>
+
+     <% end %>
