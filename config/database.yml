@@ -32,3 +32,11 @@ production:
   pool: 5
   username: root
   password:
+
+proxied-appfog:
+  adapter: mysql2 
+  database: d78b9cb54116649e9ae828a8d8a212142 
+  username: uBG2Oka3FtIIN 
+  password: pOdWo0ncArQeZ 
+  port: 10000 
+  host: 127.0.0.1
