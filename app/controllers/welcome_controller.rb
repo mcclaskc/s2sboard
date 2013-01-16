@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
   def index
-  	@job = Job.find(:all)
+  	@jobs = Job.find(:all)
   end
 end
