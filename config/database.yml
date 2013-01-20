@@ -31,4 +31,4 @@ production:
   database: s2sboard_production
   pool: 5
   username: root
-  password:
+  password:	
