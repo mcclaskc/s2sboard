@@ -27,9 +27,6 @@ production:
   database: s2sboard_production
   pool: 5
   username: root
-<<<<<<< HEAD
-  password:	
-=======
   password:
 
 proxied-appfog:
@@ -39,4 +36,3 @@ proxied-appfog:
   password: pOdWo0ncArQeZ 
   port: 10000 
   host: 127.0.0.1
->>>>>>> 62547f1342477621282ca4c23a85b0d9a594ee49
