@@ -31,4 +31,16 @@ production:
   database: s2sboard_production
   pool: 5
   username: root
+<<<<<<< HEAD
   password:	
+=======
+  password:
+
+proxied-appfog:
+  adapter: mysql2 
+  database: d78b9cb54116649e9ae828a8d8a212142 
+  username: uBG2Oka3FtIIN 
+  password: pOdWo0ncArQeZ 
+  port: 10000 
+  host: 127.0.0.1
+>>>>>>> 62547f1342477621282ca4c23a85b0d9a594ee49
