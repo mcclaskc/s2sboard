@@ -5,11 +5,9 @@
 	<table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:type) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
-      <th><%= model_class.human_attribute_name(:user_id) %></th>
       <th><%= model_class.human_attribute_name(:contact) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -21,7 +19,6 @@
         <td><%= job.name %></td>
         <td><%= job.type %></td>
         <td><%= job.description %></td>
-        <td><%= job.user_id %></td>
         <td><%= job.contact %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

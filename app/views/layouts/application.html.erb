@@ -23,14 +23,21 @@
       </a>
  
       <!-- Be sure to leave the brand out there if you want it shown -->
-      <a class="brand" href="#">Startups2Students</a>
+      <a class="brand" href="/">Startups2Students</a>
  
       <!-- Everything you want hidden at 940px or less, place within here -->
       <div class="nav-collapse collapse">
       	<ul class="nav">
-            <li><%= link_to "Login" %></li>
-            <li><%= link_to "Contact Us" %></li>
-          </ul>
+            <% if signed_in? %>
+              <li><%= link_to  "Edit Profile", edit_user_path(current_user)%></li>
+              <li><%= link_to  "Add Job", "#" %></li>
+              <li><%= link_to  "Edit jobs", "#" %></li>
+              <li><%= link_to  "Sign out", signout_path, method: "delete" %></li>
+            <% else %>
+              <li><%= link_to  "Sign in", signin_path %></li>
+              <li><%= link_to  "Sign up", new_user_path %></li>
+            <% end %>
+        </ul>
         <!-- .nav, .navbar-search, .navbar-form, etc -->
       </div>
  

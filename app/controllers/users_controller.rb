@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_filter :signed_in_user, only: [:index, :edit, :update, :destroy]
-  before_filter :correct_user, only: [:edit, :update]
+  before_filter :correct_user, only: [:edit, :update, :destroy]
 
   # GET /users
   # GET /users.json
@@ -66,7 +66,8 @@ class UsersController < ApplicationController
 private
   def correct_user
     @user = User.find(params[:id])
-    redirect_to(root_url) unless current_user?(@user)  
+    redirect_to(root_url) unless current_user?(@user)
+    flash[:notice] = "You're not allowed to do that!"  
   end
 
 end
