@@ -8,27 +8,16 @@
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:type) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
-      <th><%= model_class.human_attribute_name(:contact) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <th><%= model_class.human_attribute_name(:contact) %>/Apply</th>
     </tr>
   </thead>
   <tbody>
     <% @jobs.each do |job| %>
       <tr>
-        <td><%= link_to job.id, job_path(job) %></td>
         <td><%= job.name %></td>
-        <td><%= job.type %></td>
+        <td><%= job.job_type %></td>
         <td><%= job.description %></td>
         <td><%= job.contact %></td>
-        <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_job_path(job), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      job_path(job),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
-        </td>
       </tr>
     <% end %>
   </tbody>

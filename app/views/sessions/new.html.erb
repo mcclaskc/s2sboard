@@ -8,10 +8,11 @@
 
       <%= f.label :password %>
       <%= f.password_field :password %>
-
+     <div class="offset0">
       <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
+    
     <% end %>
-
+       </div>
     <p>New user? <%= link_to "Sign up now!", signup_path %></p>
   </div>
 </div>
