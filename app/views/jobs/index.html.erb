@@ -5,21 +5,16 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:type) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
-      <th><%= model_class.human_attribute_name(:user_id) %></th>
       <th><%= model_class.human_attribute_name(:contact) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @jobs.each do |job| %>
       <tr>
-        <td><%= link_to job.id, job_path(job) %></td>
-        <td><%= job.name %></td>
+        <td><%= link_to job.name, job_path(job) %></td>
         <td><%= job.type %></td>
         <td><%= job.description %></td>
         <td><%= job.user_id %></td>

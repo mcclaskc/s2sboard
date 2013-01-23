@@ -1,38 +1,21 @@
-<%= form_for @job, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
-    <%= f.label :name, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :name, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :type, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :type, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :description, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :description, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :user_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :user_id, :class => 'number_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :contact, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :contact, :class => 'text_field' %>
-    </div>
-  </div>
+<div class="row">
+  <div class="span6 offset3">
+    <h3>Sign up</h3>
+    <%= form_for(@job) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
 
-  <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                jobs_path, :class => 'btn' %>
+      <%= f.label :type %>
+      <%= f.text_field :type %>
+
+      <%= f.label :contact %>
+      <%= f.text_field :contact %>
+
+      <%= f.label :description %>
+      <%= f.text_area :description, size: "4x4"%>
+
+      <div class = "offset0"><%= f.submit "Create my account", class: "btn btn-large btn-primary" %></div>
+    <% end %>
   </div>
-<% end %>
+</div>

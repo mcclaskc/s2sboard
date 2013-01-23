@@ -15,14 +15,12 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     #@jobs = User.jobs.paginate(page: params[:page])
-
   end
 
   # GET /users/new
   # GET /users/new.json
   def new
     @user = User.new
-
   end
 
   # GET /users/1/edit
@@ -67,7 +65,7 @@ private
   def correct_user
     @user = User.find(params[:id])
     redirect_to(root_url) unless current_user?(@user)
-    flash[:notice] = "You're not allowed to do that!"  
+    flash[:notice].now = "You're not allowed to do that!"  
   end
 
 end
