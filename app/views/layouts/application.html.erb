@@ -25,7 +25,7 @@
       </a>
  
       <!-- Be sure to leave the brand out there if you want it shown -->
-      <a class="brand" href="/"> <img src="assets/S2S_Final.png" alt="Startups2Students" width="140" height="100"/></a>
+      <a class="brand" href="/"> <img src="/assets/S2S_Final.png" alt="Startups2Students" width="140" height="100"/></a>
  
       <!-- Everything you want hidden at 940px or less, place within here -->
       <div class="nav-collapse collapse">
@@ -37,7 +37,7 @@
               <li><%= link_to  "Sign out", signout_path, method: "delete" %></li>
             <% else %>
               <li><%= link_to  "Employer Sign in", signin_path %></li>
-              <li><%= link_to  "Employer Sign up", new_user_path %></li>
+              <li><%= link_to  "Employer Sign up", signup_path %></li>
             <% end %>
         </ul>
         <!-- .nav, .navbar-search, .navbar-form, etc -->
