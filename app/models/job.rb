@@ -1,6 +1,6 @@
 class Job < ActiveRecord::Base
 
-  attr_accessible :contact, :description, :name, :type
+  attr_accessible :contact, :description, :name, :job_type
 
   belongs_to :user
 

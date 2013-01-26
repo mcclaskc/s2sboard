@@ -64,8 +64,7 @@ class UsersController < ApplicationController
 private
   def correct_user
     @user = User.find(params[:id])
-    redirect_to(root_url) unless current_user?(@user)
-    flash[:notice].now = "You're not allowed to do that!"  
+    redirect_to(root_url, notice:"You're not allowed to do that!") unless current_user?(@user)
   end
 
 end

@@ -5,7 +5,7 @@ class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
   def index
-    @jobs = Job.all
+    @jobs = current_user.jobs
 
     respond_to do |format|
       format.html # index.html.erb
@@ -57,10 +57,10 @@ class JobsController < ApplicationController
 
     respond_to do |format|
       if @job.update_attributes(params[:job])
-        format.html { redirect_to @job, notice: 'Job was successfully updated.' }
+      #  format.html { redirect_to @job, notice: 'Job was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+      #  format.html { render action: "edit" }
         format.json { render json: @job.errors, status: :unprocessable_entity }
       end
     end
@@ -69,12 +69,19 @@ class JobsController < ApplicationController
   # DELETE /jobs/1
   # DELETE /jobs/1.json
   def destroy
-    @job = Job.find(params[:id])
     @job.destroy
+    redirect_to root_url
 
     respond_to do |format|
       format.html { redirect_to jobs_url }
       format.json { head :no_content }
     end
+  end
+
+  private 
+
+  def correct_user
+    @job = current_user.jobs.find_by_id(params[:id])
+    redirect_to root_url if @job.nil?
   end
 end
