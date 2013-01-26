@@ -9,12 +9,12 @@
       <%= f.text_field :job_type %>
 
       <%= f.label :contact %>
-      <%= f.text_field :contact %>
+      <%= f.text_field :contact, value: current_user.email %>
 
       <%= f.label :description %>
       <%= f.text_area :description, size: "4x4"%>
 
-      <div class = "offset0"><%= f.submit "Create my account", class: "btn btn-large btn-primary" %></div>
+      <div class = "offset0"><%= f.submit button_text, class: "btn btn-large btn-primary" %></div>
     <% end %>
   </div>
 </div>

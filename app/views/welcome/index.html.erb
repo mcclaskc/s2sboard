@@ -1,14 +1,13 @@
 <h3>Welcome to Startups2Students</h3>
 	<strong><h3>This site is currently under construction. Please visit <a href = "http://csuac.com/tagged/s2s">CSUAC.com</a> </h3></strong>	
 	<h4>Available Positions</h4>
-	<%- model_class = Job -%>
 	<table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:type) %></th>
-      <th><%= model_class.human_attribute_name(:description) %></th>
-      <th><%= model_class.human_attribute_name(:contact) %>/Apply</th>
+      <th>Job Title</th>
+      <th>Job Type</th>
+      <th>Location</th>
+      <th>Contact email</th>
     </tr>
   </thead>
   <tbody>
