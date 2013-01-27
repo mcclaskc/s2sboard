@@ -6,26 +6,28 @@
     <%= link_to "Employer Sign up", signup_path, class: "btn btn-danger" %> 
 <% end %>
   </div>
-	<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Job Title</th>
-      <th>Company</th>
-      <th>Job Type</th>
-      <th>Location</th>
-      <th>Contact email</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @jobs.each do |job| %>
+<div class="span9">
+  <table class="table table-striped">
+    <thead>
       <tr>
-        <td><%= link_to job.name, job_path(job) %></td>
-        <td><%= link_to company_name(job), user_path(job.user_id) %></td>
-        <td><%= job.job_type %></td>
-        <td><%= job.location %></td>
-        <td><%= job.contact %></td>
+        <th>Job Title</th>
+        <th>Company</th>
+        <th>Job Type</th>
+        <th>Location</th>
+        <th>Contact email</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @jobs.each do |job| %>
+        <tr>
+          <td><%= link_to job.name, job_path(job) %></td>
+          <td><%= link_to company_name(job), user_path(job.user_id) %></td>
+          <td><%= job.job_type %></td>
+          <td><%= job.location %></td>
+          <td><%= job.contact %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
