@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
-  before_filter :signed_in_user
-  before_filter :correct_user, only: [:destroy, :edit, :update]
+  before_filter :signed_in_user, only: [ :destroy, :edit, :update]
+  before_filter :correct_user, only: [ :destroy, :edit, :update]
 
   # GET /jobs
   # GET /jobs.json
@@ -55,15 +55,11 @@ class JobsController < ApplicationController
   def update
     @job = Job.find(params[:id])
 
-    respond_to do |format|
-      if @job.update_attributes(params[:job])
-      #  format.html { redirect_to @job, notice: 'Job was successfully updated.' }
-        format.json { head :no_content }
-      else
-      #  format.html { render action: "edit" }
-        format.json { render json: @job.errors, status: :unprocessable_entity }
-      end
+    if @job.update_attributes(params[:job])
+      flash[:success] = "The job has been updated!"
+      redirect_to root_url
     end
+
   end
 
   # DELETE /jobs/1
@@ -71,11 +67,6 @@ class JobsController < ApplicationController
   def destroy
     @job.destroy
     redirect_to root_url
-
-    respond_to do |format|
-      format.html { redirect_to jobs_url }
-      format.json { head :no_content }
-    end
   end
 
   private 

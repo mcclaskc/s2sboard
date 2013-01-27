@@ -1,0 +1,35 @@
+<div class = "header_image">
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+ 
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+ 
+      <!-- Be sure to leave the brand out there if you want it shown -->
+      <a class="brand" href="/"> <img src="/assets/S2S_Final.png" alt="Startups2Students" width="140" height="100"/></a>
+ 
+      <!-- Everything you want hidden at 940px or less, place within here -->
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+            <% if signed_in? %>
+              <li><%= link_to  "Edit Profile", edit_user_path(current_user)%></li>
+              <li><%= link_to  "Add Job", new_job_path %></li>
+              <li><%= link_to  "Edit jobs", jobs_path %></li>
+              <li><%= link_to  "Sign out", signout_path, method: "delete" %></li>
+              <li> <%= link_to current_user.company, user_path(current_user.id) %>
+            <% else %></li>
+              <li><%= link_to  "Employer Sign in", signin_path %></li>
+              <li><%= link_to  "Employer Sign up", signup_path %></li>
+            <% end %>
+        </ul>
+        <!-- .nav, .navbar-search, .navbar-form, etc -->
+      </div>
+ 
+    </div>
+  </div>
+</div>

@@ -2,17 +2,20 @@
   <div class="span6 offset3">
     <%= form_for(@job) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
-      <%= f.label :name %>
+      <%= f.label :name, "Job Title" %>
       <%= f.text_field :name %>
 
       <%= f.label :job_type %>
-      <%= f.text_field :job_type %>
+      <%= f.select :job_type, [['Internship', 'Internship'], ['Full Time', 'Full Time']] %>
+
+      <%= f.label :location, "Job Location" %>
+      <%= f.text_field :location %>
 
       <%= f.label :contact %>
       <%= f.text_field :contact, value: current_user.email %>
 
-      <%= f.label :description %>
-      <%= f.text_area :description, size: "4x4"%>
+      <%= f.label :description, "Job Description" %>
+      <%= f.text_area :description, size: "6x6"%>
 
       <div class = "offset0"><%= f.submit button_text, class: "btn btn-large btn-primary" %></div>
     <% end %>

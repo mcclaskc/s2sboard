@@ -1,10 +1,16 @@
-<h3>Welcome to Startups2Students</h3>
-	<strong><h3>This site is currently under construction. Please visit <a href = "http://csuac.com/tagged/s2s">CSUAC.com</a> </h3></strong>	
-	<h4>Available Positions</h4>
+	<% if !signed_in? %>
+  <div class="alert alert-info">
+    <h3>Hello! startups2students.com is a simple jobs board that helps connect
+      startups to university students.
+    </h3>
+    <%= link_to "Employer Sign up", signup_path, class: "btn btn-danger" %> 
+<% end %>
+  </div>
 	<table class="table table-striped">
   <thead>
     <tr>
       <th>Job Title</th>
+      <th>Company</th>
       <th>Job Type</th>
       <th>Location</th>
       <th>Contact email</th>
@@ -13,9 +19,10 @@
   <tbody>
     <% @jobs.each do |job| %>
       <tr>
-        <td><%= job.name %></td>
+        <td><%= link_to job.name, job_path(job) %></td>
+        <td><%= link_to company_name(job), user_path(job.user_id) %></td>
         <td><%= job.job_type %></td>
-        <td><%= job.description %></td>
+        <td><%= job.location %></td>
         <td><%= job.contact %></td>
       </tr>
     <% end %>
