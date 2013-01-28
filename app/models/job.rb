@@ -11,8 +11,8 @@ class Job < ActiveRecord::Base
   validates :description, presence: true, length: { maximum: 1000 }
   validates :job_type, presence: true
 
-  def self.list
-  	sql = 'SELECT jobs.*, users.company, users.location FROM jobs INNER JOIN users ON jobs.user_id=users.id'
+  def self.list(order_by, direction)
+  	sql = "SELECT jobs.*, users.company FROM jobs INNER JOIN users ON jobs.user_id=users.id ORDER BY #{order_by} #{direction}"
   	self.find_by_sql(sql)
   end
 
