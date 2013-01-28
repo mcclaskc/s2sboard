@@ -12,29 +12,31 @@
 # 			name: 'Rails Dev',
 # 	    	job_type: 'Internship',
 # 	    	description: 'Do some Rails shit',
-# 	    	user_id: 1,
+# 	    	location: 'Boulder',
 # 	    	contact: 'user1@domain'
 # 		},
 # 		{
 # 			name: 'Googling (a little) Shit',
 # 	    	job_type: 'Internship',
 # 	    	description: 'Practice Googling shit',
-# 	    	user_id: 2,
+# 	    	location: 'Boulder',
 # 	    	contact: 'user2@domain'
 # 		},
 # 		{
 # 			name: 'Pro Googler',
 # 	    	job_type: 'Full Time',
 # 	    	description: 'Google Shit Full time',
-# 	    	user_id: 3,
+# 	    	location: 'Denver',
 # 	    	contact: 'user3@domain'
 # 		},
 # 		{
 # 			name: 'App Maker',
 # 	    	job_type: 'Part Time',
 # 	    	description: 'Make some dope apps n shit with some dude',
-# 	    	user_id: 4,
+# 	    	location: 'Denver',
 # 	    	contact: 'user4@domain'
 # 		}
 
 # 	])
+
+
