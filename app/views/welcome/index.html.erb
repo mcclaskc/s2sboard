@@ -23,6 +23,8 @@
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:type) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:company) %></th>
+      <th><%= model_class.human_attribute_name(:location) %></th>
       <th><%= model_class.human_attribute_name(:contact) %>/Apply</th>
     </tr>
   </thead>
@@ -32,6 +34,8 @@
         <td><%= job.name %></td>
         <td><%= job.job_type %></td>
         <td><%= job.description %></td>
+        <td><%= job.company %></td>
+        <td><%= job.location %></td>
         <td><%= job.contact %></td>
       </tr>
     <% end %>
