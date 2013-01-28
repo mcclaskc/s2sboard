@@ -37,7 +37,8 @@
   </thead>
   <tbody>
     <% @jobs.each do |job| %>
-      <tr>
+      <tr onmouseover="this.style.cursor='pointer';"
+        onclick="location.href='<%=job_url(job)%>';" style="cursor: pointer;">
         <td><%= job.name %></td>
         <td><%= job.job_type %></td>
         <td><%= job.description %></td>
