@@ -17,11 +17,16 @@
     <%= content_tag(:div, value, class: "alert alert-#{key}") %>
   <% end %>
 	<div class="row">
-		<div class="span9"><%= yield %></div>
-	</div>	
-  <%= debug(params) if Rails.env.development? %>
+    <div class="span1"></div>
+    <div class="span10"><%= yield %>
+        <%= debug(params) if Rails.env.development? %>
+    </div>
+    <div class="span1"></div>
+  </div>
 </div>
-
-
+  <div class="row">
+    <div class="footer">
+      </div>
+    </div>
 </body>
 </html>

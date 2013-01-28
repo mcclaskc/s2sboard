@@ -1,33 +1,40 @@
-	<% if !signed_in? %>
-  <div class="alert alert-info">
-    <h3>Hello! startups2students.com is a simple jobs board that helps connect
-      startups to university students.
-    </h3>
-    <%= link_to "Employer Sign up", signup_path, class: "btn btn-danger" %> 
-<% end %>
+<% if !signed_in?	%>
+  <div class="row">
+    <div class="span5">
+      <h2>Welcome to the end <br> of your job search</h2>
+      <div class = "lead">Find internships and entry-level <br> positions at amazing startups</div>
+    </div>
+    <div class="span5">
+      <img src="/assets/s2s_home.png" alt="Startups2Students"/>
+    </div>
   </div>
-<div class="span9">
+  <div class="row">
+    <div class="span3"></div>
+      <div class="span4"><%= link_to  "Employer Sign up", signup_path, class: "btn btn-large btn-primary"%></div>
+      <div class="span3"></div>
+    <img src="/assets/grey_out.png" alt="GrayOut"/>
+    </div>
+    <% end %>
+  <h4>Available Positions</h4>
+  <%- model_class = Job -%>
   <table class="table table-striped">
-    <thead>
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:type) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:contact) %>/Apply</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @jobs.each do |job| %>
       <tr>
-        <th>Job Title</th>
-        <th>Company</th>
-        <th>Job Type</th>
-        <th>Location</th>
-        <th>Contact email</th>
+        <td><%= job.name %></td>
+        <td><%= job.job_type %></td>
+        <td><%= job.description %></td>
+        <td><%= job.contact %></td>
       </tr>
-    </thead>
-    <tbody>
-      <% @jobs.each do |job| %>
-        <tr>
-          <td><%= link_to job.name, job_path(job) %></td>
-          <td><%= link_to company_name(job), user_path(job.user_id) %></td>
-          <td><%= job.job_type %></td>
-          <td><%= job.location %></td>
-          <td><%= job.contact %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+    <% end %>
+  </tbody>
+</table>
 
