@@ -18,12 +18,17 @@
         <ul class="nav">
             <% if signed_in? %>
               <li><%= link_to  "Edit Profile", edit_user_path(current_user)%></li>
+              <li class="divider-vertical"></li>
               <li><%= link_to  "Add Job", new_job_path %></li>
+              <li class="divider-vertical"></li>
               <li><%= link_to  "Edit jobs", jobs_path %></li>
+              <li class="divider-vertical"></li>
               <li><%= link_to  "Sign out", signout_path, method: "delete" %></li>
+              <li class="divider-vertical"></li>
               <li> <%= link_to current_user.company, user_path(current_user.id) %>
             <% else %></li>
               <li><%= link_to  "Employer Sign in", signin_path %></li>
+              <li class="divider-vertical"></li>
               <li><%= link_to  "Employer Sign up", signup_path %></li>
             <% end %>
         </ul>
