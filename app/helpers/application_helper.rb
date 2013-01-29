@@ -2,7 +2,7 @@ module ApplicationHelper
 	def sortable(column, title=nil)
 	  title ||= column.titleize
 	  direction = params[:direction] == "asc" ? "desc" : "asc"
-	  css_class = params[:order_by] == column ? "arrow #{direction}" : nil
-	  link_to title, {:order_by => column, :direction => direction}, {:class => css_class}
+	  arrow = params[:order_by] == column ? "icon-circle-arrow-#{direction == 'asc' ? 'up' : 'down'}" : nil
+	  link_to raw(title+" <i class=\"#{arrow}\"></i>") , {:order_by => column, :direction => direction}#, {:class => css_class}
 	end
 end
