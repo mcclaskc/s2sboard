@@ -31,15 +31,15 @@
       <th><%= sortable 'job_type', 'Type' %></th>
       <th><%= sortable 'company' %></th>
       <th><%= sortable 'location' %></th>
-      <th>Description</th>  
       <th>Contact/Apply</th>
     </tr>
   </thead>
   <tbody>
     <% @jobs.each do |job| %>
-        <td><%= job.name %></td>
+     <tr>      <!-- onmouseover="this.style.cursor='pointer';" onclick="location.href='<%=job_url(job)%>';" style="cursor: pointer;" -->
+        <td><%= link_to job.name, job_url(job) %></td>
         <td><%= job.job_type %></td>
-        <td><%= job.company %></td>
+        <td><%= link_to job.company, user_url(job.user_id) %></td>
         <td><%= job.location %></td>
         <td><%= job.contact %></td>
       </tr>
