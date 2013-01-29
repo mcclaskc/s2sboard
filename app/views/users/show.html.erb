@@ -1,5 +1,28 @@
 <div class="page-header">
   <h1><%= @user.company %></h1>
-  <%= @jobs %>
+  <h2><%= @user.location %></h1>
+  <div class="well">
+  <table class="table table-striped ">
+  <thead>
+    <tr>
+      <th><%= sortable 'name'%></th>
+      <th><%= sortable 'job_type', 'Type' %></th>
+      <th><%= sortable 'location' %></th>
+      <th>Contact/Apply</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @jobs.each do |job| %>
+     <tr>      <!-- onmouseover="this.style.cursor='pointer';" onclick="location.href='<%=job_url(job)%>';" style="cursor: pointer;" -->
+        <td><%= link_to job.name, job_url(job) %></td>
+        <td><%= job.job_type %></td>
+        <td><%= job.location %></td>
+        <td><%= job.contact %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+  </div>
 </div>
 
