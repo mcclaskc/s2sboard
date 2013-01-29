@@ -3,4 +3,30 @@
   <h1><%=t '.title', :default => t('helpers.titles.edit', :model => model_class.model_name.human,
                                    :default => "Edit #{model_class.model_name.human}") %></h1>
 </div>
-<%= render 'form', button_text: "Save Changes" %>
+<div class="row">
+  <div class="span6 customform">
+    <%= form_for(@job) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <%= f.label :name, "Job Title" %>
+      <%= f.text_field :name %>
+
+      <%= f.label :job_type %>
+      <%= f.select :job_type, [['Internship', 'Internship'], ['Full Time', 'Full Time']] %>
+
+      <%= f.label :location, "Job Location (City, State)" %>
+      <%= f.text_field :location %>
+
+      <%= f.label :contact, "How should applicants apply (140 characters max)?" %>
+      <%= f.text_field :contact %>
+
+      <%= f.label :external_link, "External link (optional):" %>
+      <%= f.text_field :external_link%>
+
+      <%= f.label :description, "Job Description" %>
+      <p class="tips">Describe the responsibilities of this job, required work experience, skills, or education.</p>
+      <%= f.text_area :description, size: "6x6"%>
+
+      <div class = "offset0"><%= f.submit "Save Changes", class: "btn btn-large btn-primary" %></div>
+    <% end %>
+  </div>
+</div>

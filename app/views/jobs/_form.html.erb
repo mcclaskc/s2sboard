@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="span6 jobform">
+  <div class="span6 customform">
     <%= form_for(@job) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
       <%= f.label :name, "Job Title" %>
@@ -8,14 +8,17 @@
       <%= f.label :job_type %>
       <%= f.select :job_type, [['Internship', 'Internship'], ['Full Time', 'Full Time']] %>
 
-      <%= f.label :location, "Job Location" %>
-      <%= f.text_field :location %>
+      <%= f.label :location, "Job Location (City, State)" %>
+      <%= f.text_field :location, value: current_user.location %>
 
-      <%= f.label :contact %>
-      <%= f.text_field :contact, value: current_user.email %>
+      <%= f.label :contact, "How should applicants apply (140 characters max)?" %>
+      <%= f.text_field :contact, value: "Send your resume to "+current_user.email %>
+
+      <%= f.label :external_link, "External link (optional):" %>
+      <%= f.text_field :external_link%>
 
       <%= f.label :description, "Job Description" %>
-      <span class="tips">Describe the responsibilities of this job, required work experience, skills, or education.</span>
+      <p class="tips">Describe the responsibilities of this job, required work experience, skills, or education.</p>
       <%= f.text_area :description, size: "6x6"%>
 
       <div class = "offset0"><%= f.submit button_text, class: "btn btn-large btn-primary" %></div>

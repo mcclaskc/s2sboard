@@ -1,14 +1,14 @@
 <div class="row">
-  <div class="span6 offset3">
+  <div class="span6 customform">
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
-      <%= f.label :company %>
+      <%= f.label :company , "Company Name" %>
       <%= f.text_field :company %>
 
       <%= f.label :email %>
       <%= f.text_field :email %>
 
-      <%= f.label :location %>
+      <%= f.label :location, "Location (City, State)" %>
       <%= f.text_field :location  %>
 
       <%= f.label :password %>
@@ -17,8 +17,8 @@
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation %>
       <div class = "offset0">
-      <%= f.submit button_text, class: "btn btn-large btn-primary" %>
-    </div>
+        <%= f.submit button_text, class: "btn btn-large btn-primary" %>
+      </div>
     <% end %>
   </div>
 </div>

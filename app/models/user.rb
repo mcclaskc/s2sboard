@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
 
 
   #validates :name, presence: true, length: { maximum: 50}
-  validates :company, presence: true, length: { maximum: 50}
+  validates :company, presence: true, length: { maximum: 50}, uniqueness: { case_sensitive: false }
   #validates :location, presence: true, length: { maximum: 50}
   validates :password, length: { minimum: 6}
 

@@ -47,7 +47,10 @@ class JobsController < ApplicationController
     if @job.save
       flash[:success] = "Job Added!"
       redirect_to root_url
+    else
+      render 'new'
     end
+
   end
 
   # PUT /jobs/1
