@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
-  before_filter :signed_in_user, only: [ :destroy, :edit, :update]
-  before_filter :correct_user, only: [ :destroy, :edit, :update]
+  before_filter :signed_in_user, only: [:new, :destroy, :edit, :update]
+  before_filter :correct_user, only: [:destroy, :edit, :update]
 
   # GET /jobs
   # GET /jobs.json

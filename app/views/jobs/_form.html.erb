@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="span6 offset3">
+  <div class="span6 jobform">
     <%= form_for(@job) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
       <%= f.label :name, "Job Title" %>
@@ -15,6 +15,7 @@
       <%= f.text_field :contact, value: current_user.email %>
 
       <%= f.label :description, "Job Description" %>
+      <span class="tips">Describe the responsibilities of this job, required work experience, skills, or education.</span>
       <%= f.text_area :description, size: "6x6"%>
 
       <div class = "offset0"><%= f.submit button_text, class: "btn btn-large btn-primary" %></div>
