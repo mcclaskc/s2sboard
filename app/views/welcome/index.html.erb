@@ -31,6 +31,7 @@
       <th><%= sortable 'company' %></th>
       <th><%= sortable 'location' %></th>
       <th>Contact/Apply</th>
+      <th><%= sortable 'created_at', 'Posted' %></th>
     </tr>
   </thead>
   <tbody>
@@ -41,6 +42,7 @@
         <td><%= link_to job.company, user_url(job.user_id) %></td>
         <td><%= job.location %></td>
         <td><%= job.contact %></td>
+        <td><%= job.created_at.to_date %></td>
       </tr>
     <% end %>
   </tbody>
