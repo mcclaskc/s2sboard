@@ -25,6 +25,7 @@
       <th><%= sortable 'company' %></th>
       <th><%= sortable 'location' %></th>
       <th><%= sortable 'created_at', 'Posted' %></th>
+      <th><%= sortable 'opening' , 'Openings' %></th>
     </tr>
   </thead>
   <tbody>
@@ -35,6 +36,7 @@
         <td><%= link_to job.company, user_url(job.user_id) %></td>
         <td><%= job.location %></td>
         <td><%= time_ago_in_words(job.created_at)%> ago</td>
+        <td><%= job.opening%></td>
       </tr>
     <% end %>
   </tbody>

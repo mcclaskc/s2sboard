@@ -1,6 +1,6 @@
 class Job < ActiveRecord::Base
 
-  attr_accessible :contact, :description, :name, :job_type, :location, :external_link
+  attr_accessible :opening, :contact, :description, :name, :job_type, :location, :external_link
 
   belongs_to :user
 
@@ -8,8 +8,9 @@ class Job < ActiveRecord::Base
   validates :user_id, presence: true
   validates :name, presence: true, length: { maximum: 140 }
   validates :location, presence: true
-  validates :description, presence: true, length: { maximum: 1000 }
+  validates :description, presence: true, length: { maximum: 2000 }
   validates :job_type, presence: true
+  
 
   validates :contact, presence: true, length: { maximum: 140 }
 

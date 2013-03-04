@@ -11,6 +11,7 @@
       <th>Contact Email</th>
       <th>Created</th>
       <th>Modify</th>
+      <th>Openings</th>
     </tr>
   </thead>
   <tbody>
@@ -30,6 +31,7 @@
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-mini btn-danger' %>
         </td>
+        <td><%=job.opening</td>
       </tr>
     <% end %>
   </tbody>
