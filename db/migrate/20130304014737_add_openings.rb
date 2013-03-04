@@ -1,5 +1,5 @@
 class AddOpenings < ActiveRecord::Migration
   def change
-  	add_column :job, :opening , :integer
+  	add_column :jobs, :opening , :integer
   end
 end
