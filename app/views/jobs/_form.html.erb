@@ -21,6 +21,9 @@
       <p class="tips">Describe the responsibilities of this job, required work experience, skills, or education.</p>
       <%= f.text_area :description, size: "6x6"%>
 
+      <%= f.label :opening, "Number of Available Positions" %>
+      <%= f.text_field :opening %>
+
       <div class = "offset0"><%= f.submit button_text, class: "btn btn-large btn-primary" %></div>
     <% end %>
   </div>

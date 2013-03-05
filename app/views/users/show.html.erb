@@ -8,6 +8,7 @@
       <th><%= sortable 'name'%></th>
       <th><%= sortable 'job_type', 'Type' %></th>
       <th><%= sortable 'location' %></th>
+      <th><%= sortable 'opening' , 'Number of Openings' %>
       <th>Contact/Apply</th>
     </tr>
   </thead>
@@ -18,6 +19,7 @@
         <td><%= job.job_type %></td>
         <td><%= job.location %></td>
         <td><%= job.contact %></td>
+        <td><%= job.opening %></td>
       </tr>
     <% end %>
   </tbody>
