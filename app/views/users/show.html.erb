@@ -4,6 +4,9 @@
   <% if @user.website != nil %>
     <h4><%= link_to @user.website, url_with_protocol(@user.website), :target => '_blank' %></h4>
     <% end %>
+  <% if @user.company_bio != nil %>
+    <h5>Company Description: <%= @user.company_bio %> </h5>
+    <% end %>
   <div class="well">
   <table class="table table-striped ">
   <thead>
