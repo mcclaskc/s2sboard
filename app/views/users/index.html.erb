@@ -5,6 +5,7 @@
   <thead>
     <tr>
       <th>Company</th>
+      <th>Website</th>
       <th>Location</th>
       <th>Email</th>
       <th>Member for</th>
@@ -14,6 +15,7 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= link_to user.company, user_path(user) %></td>
+        <td><%= user.website %></td>
         <td><%= user.location %></td>
         <td><%= user.email %></td>
         <td><%= time_ago_in_words(user.created_at) %></td>
