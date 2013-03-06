@@ -4,7 +4,9 @@
     <h4>Location: <%= @job.location %></h4>
     <h4>Description:<br> <br> <%= @job.description %></h4><br>
     <h4>To Apply: <%= @job.contact %> </h4>
-    <h4> Positions Available: <%= @job.opening %> </h4>
+    <% if @job.opening != nil %>
+      <h4> Positions Available: <%= @job.opening %> </h4>
+    <% end %>
   </div>
 </div>
 
