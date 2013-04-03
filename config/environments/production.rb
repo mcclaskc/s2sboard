@@ -4,6 +4,15 @@ S2sboard::Application.configure do
   # Code is not reloaded between requests
   config.cache_classes = true
 
+  config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_credentials => {
+    :bucket => ENV['S2SBoard'],
+    :access_key_id => ENV['AKIAJUSB2WJDVHMVWMYA'],
+    :secret_access_key => ENV['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']
+  }
+}
+
   # Full error reports are disabled and caching is turned on
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true

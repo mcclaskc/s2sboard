@@ -1,11 +1,16 @@
 class User < ActiveRecord::Base
-  attr_accessible :company, :email, :location, :name, :password, :password_confirmation, :website, :company_bio
+  attr_accessible :company, :email, :location, :name, :password, :password_confirmation, :website, :company_bio , :photo
   has_secure_password
 
   has_many :jobs, dependent: :destroy
 
   before_save {|user| user.email = email.downcase}
   before_save :create_remember_token
+
+  has_attached_file :photo , :styles => { :medium => "200x200>", :thumb => "100x100>" } 
+  #:path => ":rails_root/public/system/:attachment/:id/:style/:filename",
+                   # :url => "/system/:attachment/:id/:style/:filename"
+
 
 
 

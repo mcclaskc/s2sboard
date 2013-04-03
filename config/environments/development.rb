@@ -19,6 +19,8 @@ S2sboard::Application.configure do
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
 
+  Paperclip.options[:command_path] = "/usr/bin"
+
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
 
@@ -35,3 +37,4 @@ S2sboard::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 end
+

@@ -32,6 +32,11 @@ gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) support
 
 # To use ActiveModel has_secure_password
  gem 'bcrypt-ruby', '~> 3.0.0'
+ gem 'paperclip'
+ gem 'cocaine', '0.3.2'
+ gem 'aws-sdk'
+
+gem 'rmagick', '2.13.2'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'

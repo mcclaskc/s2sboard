@@ -1,9 +1,12 @@
 <div class="row">
   <div class="span6 customform">
-    <%= form_for(@user) do |f| %>
+    <%= form_for @user , :html => { :multipart => true} do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
       <%= f.label :company , "Company Name" %>
       <%= f.text_field :company %>
+
+      <%= f.label :photo , "Company Logo" %>
+      <%= f.file_field :photo %>
 
       <%= f.label :website , "Website" %>
       <%= f.text_field :website %>

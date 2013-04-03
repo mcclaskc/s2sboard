@@ -1,6 +1,7 @@
 <div class="page-header">
   <h1><%= @user.company %></h1>
   <h2><%= @user.location %></h1>
+    <h5><%= image_tag @user.photo.url(:thumb) %> </h5>
   <% if @user.website != nil %>
     <h4><%= link_to @user.website, url_with_protocol(@user.website), :target => '_blank' %></h4>
     <% end %>
