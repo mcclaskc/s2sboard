@@ -7,7 +7,17 @@ class User < ActiveRecord::Base
   before_save {|user| user.email = email.downcase}
   before_save :create_remember_token
 
-  has_attached_file :photo , :styles => { :medium => "200x200>", :thumb => "100x100>" } 
+  has_attached_file :photo , :styles => { :medium => "200x200>", :thumb => "100x100>" } ,
+  # config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_protocol => 'http',
+  :bucket => 'S2SBoard',
+  :path => "/image/:id/:filename",
+  :s3_credentials => {
+    :access_key_id => 'AKIAJUSB2WJDVHMVWMYA',
+    :secret_access_key => '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'
+  }
+
   #:path => ":rails_root/public/system/:attachment/:id/:style/:filename",
                    # :url => "/system/:attachment/:id/:style/:filename"
 

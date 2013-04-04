@@ -34,7 +34,7 @@ gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) support
  gem 'bcrypt-ruby', '~> 3.0.0'
  gem 'paperclip'
  gem 'cocaine', '0.3.2'
- gem 'aws-sdk'
+ gem 'aws-sdk' ,  :require => 'aws/s3'
 
 gem 'rmagick', '2.13.2'
 
