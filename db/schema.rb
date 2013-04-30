@@ -31,17 +31,12 @@ ActiveRecord::Schema.define(:version => 20130403021354) do
     t.string   "email"
     t.string   "company"
     t.string   "location"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
     t.string   "password_digest"
     t.string   "remember_token"
     t.string   "website"
     t.string   "company_bio"
-    t.string   "avatar"
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
